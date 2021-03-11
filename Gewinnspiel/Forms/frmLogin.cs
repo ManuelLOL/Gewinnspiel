@@ -122,7 +122,25 @@ namespace Gewinnspiel.Forms
 
         private void btnRegistrieren_Click(object sender, EventArgs e)
         {
+            if(txtEmail.Text.Equals(" ")||txtPasswort.Equals(" "))
+            {
+                MessageBox.Show("Bitte füllen Sie sowohl Benutzer als auch Passwort aus!");
+                return;
+            }
+            foreach (Teilnehmer t in teilnehmerListe)
+            {
+                if (txtEmail.Text.Equals(t.Email))
+                {
+                    MessageBox.Show("Diese Email-Adresse ist bereits registriert!");
+                    return;
+                }
+            }
 
+            frmTeilnehmerAdd frmReg = new frmTeilnehmerAdd();
+            frmReg.Text = "Registrierung";
+            frmReg.txtEmail.Text = txtEmail.Text;
+            frmReg.txtPasswort.Text = txtPasswort.Text;
+            frmReg.ShowDialog();
         }
     }
 }

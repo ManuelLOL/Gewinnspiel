@@ -362,13 +362,10 @@
         #endregion
 
         private System.Windows.Forms.Button btnAuge;
-        private System.Windows.Forms.TextBox txtPasswort;
-        private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Button btnAbbrechen;
         private System.Windows.Forms.Button btnSpeichern;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cbGeschleht;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
@@ -376,10 +373,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.CheckBox cbDeaktiviert;
         private System.Windows.Forms.CheckBox cbAdmin;
-        private System.Windows.Forms.TextBox txtID;
-        private System.Windows.Forms.TextBox txtZuname;
-        private System.Windows.Forms.TextBox txtVorname;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
@@ -388,5 +381,12 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
+        internal System.Windows.Forms.TextBox txtPasswort;
+        internal System.Windows.Forms.TextBox txtEmail;
+        internal System.Windows.Forms.ComboBox cbGeschleht;
+        internal System.Windows.Forms.TextBox txtID;
+        internal System.Windows.Forms.TextBox txtZuname;
+        internal System.Windows.Forms.TextBox txtVorname;
+        internal System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }
