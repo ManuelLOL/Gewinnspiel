@@ -43,10 +43,10 @@
             this.label7 = new System.Windows.Forms.Label();
             this.cbDeaktiviert = new System.Windows.Forms.CheckBox();
             this.cbAdmin = new System.Windows.Forms.CheckBox();
-            this.txtID = new System.Windows.Forms.TextBox();
+            this.txtTeilnehmer = new System.Windows.Forms.TextBox();
             this.txtZuname = new System.Windows.Forms.TextBox();
             this.txtVorname = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpGebDat = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -102,6 +102,7 @@
             this.btnSpeichern.TabIndex = 9;
             this.btnSpeichern.Text = "Speichern";
             this.btnSpeichern.UseVisualStyleBackColor = true;
+            this.btnSpeichern.Click += new System.EventHandler(this.btnSpeichern_Click);
             // 
             // label2
             // 
@@ -125,7 +126,12 @@
             // 
             // cbGeschleht
             // 
+            this.cbGeschleht.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbGeschleht.FormattingEnabled = true;
+            this.cbGeschleht.Items.AddRange(new object[] {
+            "M",
+            "W",
+            "D"});
             this.cbGeschleht.Location = new System.Drawing.Point(152, 330);
             this.cbGeschleht.Name = "cbGeschleht";
             this.cbGeschleht.Size = new System.Drawing.Size(129, 21);
@@ -201,13 +207,15 @@
             this.cbAdmin.Text = "Admin";
             this.cbAdmin.UseVisualStyleBackColor = true;
             // 
-            // txtID
+            // txtTeilnehmer
             // 
-            this.txtID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtID.Location = new System.Drawing.Point(152, 12);
-            this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(256, 26);
-            this.txtID.TabIndex = 22;
+            this.txtTeilnehmer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTeilnehmer.Location = new System.Drawing.Point(152, 12);
+            this.txtTeilnehmer.Name = "txtTeilnehmer";
+            this.txtTeilnehmer.ReadOnly = true;
+            this.txtTeilnehmer.Size = new System.Drawing.Size(111, 26);
+            this.txtTeilnehmer.TabIndex = 22;
+            this.txtTeilnehmer.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtZuname
             // 
@@ -225,14 +233,14 @@
             this.txtVorname.Size = new System.Drawing.Size(256, 26);
             this.txtVorname.TabIndex = 24;
             // 
-            // dateTimePicker1
+            // dtpGebDat
             // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(189, 151);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 26);
-            this.dateTimePicker1.TabIndex = 25;
+            this.dtpGebDat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpGebDat.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpGebDat.Location = new System.Drawing.Point(189, 151);
+            this.dtpGebDat.Name = "dtpGebDat";
+            this.dtpGebDat.Size = new System.Drawing.Size(200, 26);
+            this.dtpGebDat.TabIndex = 25;
             // 
             // label8
             // 
@@ -333,10 +341,10 @@
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dtpGebDat);
             this.Controls.Add(this.txtVorname);
             this.Controls.Add(this.txtZuname);
-            this.Controls.Add(this.txtID);
+            this.Controls.Add(this.txtTeilnehmer);
             this.Controls.Add(this.cbAdmin);
             this.Controls.Add(this.cbDeaktiviert);
             this.Controls.Add(this.label7);
@@ -354,6 +362,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frmTeilnehmerAdd";
             this.Text = "frmTeilnehmerAdd";
+            this.Load += new System.EventHandler(this.frmTeilnehmerAdd_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -384,9 +393,9 @@
         internal System.Windows.Forms.TextBox txtPasswort;
         internal System.Windows.Forms.TextBox txtEmail;
         internal System.Windows.Forms.ComboBox cbGeschleht;
-        internal System.Windows.Forms.TextBox txtID;
+        internal System.Windows.Forms.TextBox txtTeilnehmer;
         internal System.Windows.Forms.TextBox txtZuname;
         internal System.Windows.Forms.TextBox txtVorname;
-        internal System.Windows.Forms.DateTimePicker dateTimePicker1;
+        internal System.Windows.Forms.DateTimePicker dtpGebDat;
     }
 }
