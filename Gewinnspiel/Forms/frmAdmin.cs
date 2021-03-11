@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Gewinnspiel
+namespace Gewinnspiel.Forms
 {
-    public partial class frmLogin : Form
+    public partial class frmAdmin : Form
     {
-        public frmLogin()
+        public frmAdmin()
         {
             InitializeComponent();
         }
