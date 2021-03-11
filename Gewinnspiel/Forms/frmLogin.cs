@@ -63,6 +63,61 @@ namespace Gewinnspiel.Forms
             return temp= System.BitConverter.ToString(result);
         }
 
+        internal void serialisierenTeil()
+        {
+            try
+            {
+                FileStream fs = new FileStream("Teilnehmer.xml", FileMode.Create, FileAccess.Write, FileShare.None);
+                serializerTeiln.Serialize(fs, teilnehmerListe);
+                fs.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Fehler beim Serialisieren der Teilnehmer: " + ex.Message);
+            }
+        }
+        internal void deserialisierenTeil()
+        {
+            try
+            {
+                FileStream fs = new FileStream("Teilnehmer.xml", FileMode.Open, FileAccess.Read, FileShare.None);
+                teilnehmerListe = (List<Teilnehmer>)serializerTeiln.Deserialize(fs);
+                fs.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Fehler beim Deserialisieren der Teilnehmer: " + ex.Message);
+            }
+        }
+
+        internal void serialisierenSpiel()
+        {
+            try
+            {
+                FileStream fs = new FileStream("Gewinnspiele.xml", FileMode.Create, FileAccess.Write, FileShare.None);
+                serializerSpiele.Serialize(fs, gewinnspielListe);
+                fs.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Fehler beim Serialisieren der Gewinnspiele: " + ex.Message);
+            }
+        }
+
+        internal void deserialisierenSpiel()
+        {
+            try
+            {
+                FileStream fs = new FileStream("Gewinnspiele.xml", FileMode.Open, FileAccess.Read, FileShare.None);
+                gewinnspielListe = (List<Spiel>)serializerSpiele.Deserialize(fs);
+                fs.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Fehler beim Deserialisieren der Gewinnspiele: " + ex.Message);
+            }
+        }
+
         #endregion
 
         private void btnRegistrieren_Click(object sender, EventArgs e)
