@@ -99,5 +99,14 @@ namespace Gewinnspiel.Forms
 
 
         }
+
+        private void btnAuge_Click(object sender, EventArgs e)
+        {
+
+            if (txtPasswort.PasswordChar == '*')
+                txtPasswort.PasswordChar = '\0';
+            else
+                txtPasswort.PasswordChar = '*';
+        }
     }
 }

@@ -23,12 +23,14 @@ namespace Gewinnspiel.Forms
         public frmLogin()
             
         {
-            InitializeComponent();
             frmLog = this;
+            InitializeComponent();
+            
         }
 
         #region Variablen
-        internal string pwCode;
+
+        string pwCode;
         internal bool foundUser;
         internal Teilnehmer activeUser;
         internal List<Teilnehmer> teilnehmerListe;
@@ -61,6 +63,54 @@ namespace Gewinnspiel.Forms
             byte[] textToHash = Encoding.Default.GetBytes(text);
             byte[] result = sha512.ComputeHash(textToHash);
             return temp= System.BitConverter.ToString(result);
+        }
+
+        internal void login()
+        {
+            pwCode = verschluesselnSHA512(txtPasswort.Text);
+            foreach (Teilnehmer t in teilnehmerListe)
+            {
+                if (t.Email.Equals(txtEmail.Text)&& t.Passwort.Equals(pwCode))
+                {
+                    if (t.Deaktiviert=true)
+                    {
+                        MessageBox.Show("Ihr Account ist deaktiviert, wenden Sie sich an den Administrator um ihn zu aktivieren!");
+                        return;
+                    }
+                    foundUser = true;
+                    activeUser = t;
+                    txtEmail.Clear();
+                    txtPasswort.Clear();
+
+                    if(t.Admin)
+                    {
+                        frmAd = new frmAdmin();
+                        frmAd.Text = "Du bist eingeloggt als" + t.Vorname + " " + t.Nachname + ", du bist Admin";
+                        frmAd.ShowDialog();
+                    }
+
+                    else //Teilnehmer
+                    {
+                        frmTeil = new frmTeilnehmer();
+                        frmTeil.Text = "Du bist eingeloggt als" + t.Vorname + " " + t.Nachname;
+                        frmTeil.ShowDialog();
+                    }
+                    break;
+                }
+
+            }
+            if(foundUser=foundUser=false)
+            {
+                MessageBox.Show("Faalsche Email Adresse oder falsches Passwort!");
+                return;
+
+            }
+            else
+            {
+                foundUser = false;
+                activeUser = null;
+            }
+
         }
 
         internal void serialisierenTeil()
@@ -141,6 +191,24 @@ namespace Gewinnspiel.Forms
             frmReg.txtEmail.Text = txtEmail.Text;
             frmReg.txtPasswort.Text = txtPasswort.Text;
             frmReg.ShowDialog();
+        }
+
+        private void btnEinloggen_Click(object sender, EventArgs e)
+        {
+            login();
+        }
+
+        private void txtPasswort_KeyDown(object sender, KeyEventArgs e)
+        {
+            login();
+        }
+
+        private void btnAuge_Click(object sender, EventArgs e)
+        {
+            if (txtPasswort.PasswordChar == '*')
+                txtPasswort.PasswordChar = '\0';
+            else
+                txtPasswort.PasswordChar = '*';
         }
     }
 }

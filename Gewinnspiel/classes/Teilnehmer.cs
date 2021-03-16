@@ -26,7 +26,9 @@ namespace Gewinnspiel.classes
         //Konstruktor
         public Teilnehmer()
         {
-
+            this.teilnehmerID = autonum;
+            autonum++;
+            anzahl++;
         }
 
         public Teilnehmer(string vorname, string nachname, DateTime gebDatum, char geschlecht, string email, string passwort, bool deaktiviert, bool admin, int anzahlSpiele)
@@ -66,6 +68,12 @@ namespace Gewinnspiel.classes
         public static int Autonum { get; set; }
 
         public static int Anzahl { get; set; }
+
+        public static int Autonom 
+        {
+        get { return autonum; }
+        set { autonum = value; }
+        }
 
         public override string ToString()
         {

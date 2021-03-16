@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Gewinnspiel.classes
 {
-    class Spiel
+    public class Spiel
     {
         //Objektvariablen
         private int spielID;

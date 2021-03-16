@@ -64,6 +64,7 @@
             this.btnAuge.Size = new System.Drawing.Size(33, 26);
             this.btnAuge.TabIndex = 13;
             this.btnAuge.UseVisualStyleBackColor = true;
+            this.btnAuge.Click += new System.EventHandler(this.btnAuge_Click);
             // 
             // txtPasswort
             // 
@@ -369,27 +370,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnAuge;
-        private System.Windows.Forms.Button btnAbbrechen;
-        private System.Windows.Forms.Button btnSpeichern;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.CheckBox cbDeaktiviert;
-        private System.Windows.Forms.CheckBox cbAdmin;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label15;
         internal System.Windows.Forms.TextBox txtPasswort;
         internal System.Windows.Forms.TextBox txtEmail;
         internal System.Windows.Forms.ComboBox cbGeschleht;
@@ -397,5 +377,25 @@
         internal System.Windows.Forms.TextBox txtZuname;
         internal System.Windows.Forms.TextBox txtVorname;
         internal System.Windows.Forms.DateTimePicker dtpGebDat;
+        internal System.Windows.Forms.Button btnAbbrechen;
+        internal System.Windows.Forms.Button btnSpeichern;
+        internal System.Windows.Forms.CheckBox cbDeaktiviert;
+        internal System.Windows.Forms.CheckBox cbAdmin;
+        internal System.Windows.Forms.Button btnAuge;
+        internal System.Windows.Forms.Label label2;
+        internal System.Windows.Forms.Label label1;
+        internal System.Windows.Forms.Label label3;
+        internal System.Windows.Forms.Label label4;
+        internal System.Windows.Forms.Label label5;
+        internal System.Windows.Forms.Label label6;
+        internal System.Windows.Forms.Label label7;
+        internal System.Windows.Forms.Label label8;
+        internal System.Windows.Forms.Label label9;
+        internal System.Windows.Forms.Label label10;
+        internal System.Windows.Forms.Label label11;
+        internal System.Windows.Forms.Label label12;
+        internal System.Windows.Forms.Label label13;
+        internal System.Windows.Forms.Label label14;
+        internal System.Windows.Forms.Label label15;
     }
 }

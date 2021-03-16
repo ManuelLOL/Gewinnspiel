@@ -66,6 +66,7 @@
             this.btnEinloggen.TabIndex = 2;
             this.btnEinloggen.Text = "Einloggen";
             this.btnEinloggen.UseVisualStyleBackColor = true;
+            this.btnEinloggen.Click += new System.EventHandler(this.btnEinloggen_Click);
             // 
             // btnRegistrieren
             // 
@@ -83,7 +84,7 @@
             this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.Location = new System.Drawing.Point(166, 48);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(181, 26);
+            this.txtEmail.Size = new System.Drawing.Size(255, 26);
             this.txtEmail.TabIndex = 4;
             this.txtEmail.Text = "manuel.boehm@gmail.com";
             // 
@@ -93,23 +94,25 @@
             this.txtPasswort.Location = new System.Drawing.Point(166, 116);
             this.txtPasswort.Name = "txtPasswort";
             this.txtPasswort.PasswordChar = '*';
-            this.txtPasswort.Size = new System.Drawing.Size(141, 26);
+            this.txtPasswort.Size = new System.Drawing.Size(216, 26);
             this.txtPasswort.TabIndex = 5;
             this.txtPasswort.Text = "1234";
+            this.txtPasswort.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPasswort_KeyDown);
             // 
             // btnAuge
             // 
-            this.btnAuge.Location = new System.Drawing.Point(314, 116);
+            this.btnAuge.Location = new System.Drawing.Point(388, 117);
             this.btnAuge.Name = "btnAuge";
             this.btnAuge.Size = new System.Drawing.Size(33, 26);
             this.btnAuge.TabIndex = 6;
             this.btnAuge.UseVisualStyleBackColor = true;
+            this.btnAuge.Click += new System.EventHandler(this.btnAuge_Click);
             // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(359, 323);
+            this.ClientSize = new System.Drawing.Size(447, 333);
             this.Controls.Add(this.btnAuge);
             this.Controls.Add(this.txtPasswort);
             this.Controls.Add(this.txtEmail);
@@ -127,12 +130,12 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnEinloggen;
-        private System.Windows.Forms.Button btnRegistrieren;
-        private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.TextBox txtPasswort;
-        private System.Windows.Forms.Button btnAuge;
+        internal System.Windows.Forms.Label label1;
+        internal System.Windows.Forms.Label label2;
+        internal System.Windows.Forms.Button btnEinloggen;
+        internal System.Windows.Forms.Button btnRegistrieren;
+        internal System.Windows.Forms.TextBox txtEmail;
+        internal System.Windows.Forms.TextBox txtPasswort;
+        internal System.Windows.Forms.Button btnAuge;
     }
 }
